@@ -274,6 +274,7 @@ def list_cartridge_stocks(request):
     cartridges = CartridgeProductNumber.objects.annotate(number_of_cartridges = 
                                                         Count('cart_prod_no',
                                                         filter=Q(cart_prod_no__status='In Stock')))
+                                                        
     cartridge_filter = CartridgeProductNumberFilter(request.GET, queryset = cartridges)
     cartridges = cartridge_filter.qs.order_by('name')
 
