@@ -297,7 +297,6 @@ def list_cartridge_stocks(request):
     }
     return render(request, 'cartridge/cartridge_list_of_stocks.html', context)
 
-
 # CartridgeProductNo. Views
 
 class CartridgeProductNumberListView(LoginRequiredMixin, ListView):
